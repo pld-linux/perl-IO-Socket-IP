@@ -7,13 +7,13 @@
 %define		pnam	Socket-IP
 Summary:	IO::Socket::IP - Family-neutral IP socket supporting both IPv4 and IPv6
 Name:		perl-IO-Socket-IP
-Version:	0.28
+Version:	0.39
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/IO/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	af171292d769374c0a3fe7f7bc0b757c
+# Source0-md5:	fe49e4f6638c55124b4f1fb9ee8fe134
 URL:		http://search.cpan.org/dist/IO-Socket-IP/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
