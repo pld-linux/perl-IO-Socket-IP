@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_with	tests	# perform "make test" - needs network connection
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	IO
 %define		pnam	Socket-IP
 Summary:	IO::Socket::IP - Family-neutral IP socket supporting both IPv4 and IPv6
