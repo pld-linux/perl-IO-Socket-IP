@@ -7,7 +7,7 @@
 Summary:	IO::Socket::IP - Family-neutral IP socket supporting both IPv4 and IPv6
 Name:		perl-IO-Socket-IP
 Version:	0.39
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
