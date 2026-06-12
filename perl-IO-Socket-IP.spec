@@ -6,14 +6,15 @@
 %define		pnam	Socket-IP
 Summary:	IO::Socket::IP - Family-neutral IP socket supporting both IPv4 and IPv6
 Name:		perl-IO-Socket-IP
-Version:	0.39
-Release:	2
+Version:	0.44
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/IO/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	fe49e4f6638c55124b4f1fb9ee8fe134
+# Source0-md5:	7d0908e82db87a1921ebfd88139cb9d7
 URL:		http://search.cpan.org/dist/IO-Socket-IP/
+BuildRequires:	perl-Module-Build
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
@@ -29,17 +30,17 @@ backward-compatible way.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL \
-	INSTALLDIRS=vendor
-%{__make}
+%{__perl} Build.PL \
+	destdir=$RPM_BUILD_ROOT \
+	installdirs=vendor
+./Build
 
-%{?with_tests:%{__make} test}
+%{?with_tests:./Build test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+./Build install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
