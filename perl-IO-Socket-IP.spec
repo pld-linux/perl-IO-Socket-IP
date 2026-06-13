@@ -22,6 +22,7 @@ BuildRequires:	perl(Test2::V0)
 BuildRequires:	perl-Socket >= 1.97
 %endif
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.745
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
