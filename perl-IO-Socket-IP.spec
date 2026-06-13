@@ -1,10 +1,11 @@
 #
 # Conditional build:
-%bcond_with	tests	# perform "make test" - needs network connection
+%bcond_with	tests	# test suite (needs network connection)
 #
 %define		pdir	IO
 %define		pnam	Socket-IP
 Summary:	IO::Socket::IP - Family-neutral IP socket supporting both IPv4 and IPv6
+Summary(pl.UTF-8):	IO::Socket::IP - niezależne od rodziny gniazdo IP, obsługujące IPv4 i IPv6
 Name:		perl-IO-Socket-IP
 Version:	0.44
 Release:	1
@@ -25,6 +26,11 @@ This module provides a protocol-independent way to use IPv4 and IPv6
 sockets, intended as a replacement for IO::Socket::INET. Most
 constructor arguments and methods are provided in a
 backward-compatible way.
+
+%description -l pl.UTF-8
+Ten moduł udostępnia niezależny od protokołu sposób używana gniazd
+IPv4 oraz IPv6; jest pomyślany jako zamiennik dla IO::Socket::INET.
+Większość argumentów konstruktora i metod jest zgodna wstecznie.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
