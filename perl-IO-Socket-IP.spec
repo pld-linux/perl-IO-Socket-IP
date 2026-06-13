@@ -15,8 +15,12 @@ Group:		Development/Languages/Perl
 Source0:	https://www.cpan.org/modules/by-module/IO/PEVANS/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	7d0908e82db87a1921ebfd88139cb9d7
 URL:		https://metacpan.org/dist/IO-Socket-IP
-BuildRequires:	perl-Module-Build
-BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	perl-Module-Build >= 0.4004
+BuildRequires:	perl-devel >= 1:5.14
+%if %{with tests}
+BuildRequires:	perl(Test2::V0)
+BuildRequires:	perl-Socket >= 1.97
+%endif
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -39,9 +43,12 @@ Większość argumentów konstruktora i metod jest zgodna wstecznie.
 %{__perl} Build.PL \
 	destdir=$RPM_BUILD_ROOT \
 	installdirs=vendor
+
 ./Build
 
-%{?with_tests:./Build test}
+%if %{with tests}
+./Build test
+%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
