@@ -12,9 +12,9 @@ Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/IO/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	https://www.cpan.org/modules/by-module/IO/PEVANS/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	7d0908e82db87a1921ebfd88139cb9d7
-URL:		http://search.cpan.org/dist/IO-Socket-IP/
+URL:		https://metacpan.org/dist/IO-Socket-IP
 BuildRequires:	perl-Module-Build
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
